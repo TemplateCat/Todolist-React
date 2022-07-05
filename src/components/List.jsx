@@ -5,19 +5,15 @@ import Todo from './Todo';
 const List = () => {
 	const { todo } = useContext(TodoContext);
 
-	if (todo.length <= 0) {
-		return <p>No se han agregado tareas.</p>;
-	} else {
-		return (
-			<ul>
-				{todo.map((item) => (
-					<Todo key={item.id} item={item} />
-				))}
-			</ul>
-		);
-	}
-
-	// todo.length <= 0 ? (<p>Vacio</p>) : (<div></div>);
+	return todo.length <= 0 ? (
+		<p>No se han agregado tareas.</p>
+	) : (
+		<ul>
+			{todo.map((item) => (
+				<Todo key={item.id} item={item} />
+			))}
+		</ul>
+	);
 };
 
 export default List;

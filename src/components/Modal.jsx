@@ -24,7 +24,7 @@ const Modal = () => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 
-		if (inputValue.trim().length <= 0 || inputValue == name) return;
+		if (inputValue.trim().length <= 0 || inputValue === name) return;
 
 		setStateModal(false);
 
@@ -40,8 +40,8 @@ const Modal = () => {
 	};
 
 	return (
-		<div className={`${stateModal ? 'visible opacity-100' : 'invisible opacity-0'} fixed top-0 left-0 bg-[#00000054] h-full w-full transition-all duration-300`} onClick={handleCloseModal} >
-			<div className={`${stateModal ? 'scale-100' : 'scale-0'} flex justify-center mt-40 transition-all duration-300`} onClick={(e) => e.stopPropagation()} >
+		<div className={`${stateModal ? 'visible opacity-100' : 'invisible opacity-0'} fixed top-0 left-0 bg-[#00000054] h-full w-full transition-all duration-300`} onClick={handleCloseModal}>
+			<div className={`${stateModal ? 'scale-100' : 'scale-0'} flex justify-center mt-40 transition-all duration-300`} onClick={(e) => e.stopPropagation()}>
 				<div className="bg-white relative rounded-lg p-5">
 					<button className="absolute btn -top-4 -right-4" onClick={handleCloseModal}>
 						X
