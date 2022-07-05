@@ -13,15 +13,15 @@ const Form = () => {
 
 		if (inputValue.trim().length <= 0) return;
 
-		setTodo((old) => [...old, { name: inputValue, id: Date.now() }]);
+		setTodo((old) => [{ name: inputValue, id: Date.now() }, ...old]);
 
 		setInputValue('');
 	};
 
 	return (
 		<form className="flex my-5" onSubmit={handleSubmit}>
-			<input className="flex-grow outline-none border-2 border-slate-200 border-r-transparent px-4 rounded-tl-lg rounded-bl-lg transition-all duration-300 focus:border-indigo-500" type="text" placeholder="Ingrese una tarea..." value={inputValue} onChange={handleChange} />
-			<button className="bg-indigo-500 text-white font-semibold transition-all duration-300 rounded-r-lg p-2 hover:bg-indigo-400" type="submit">
+			<input className="input input-addtodo" type="text" placeholder="Ingrese una tarea..." value={inputValue} onChange={handleChange} autoFocus />
+			<button className="btn btn-input" type="submit">
 				Agregar
 			</button>
 		</form>
