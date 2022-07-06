@@ -11,6 +11,11 @@ const Todo = ({ item }) => {
 	const handleEdit = () => {
 		setTodoUpdate(item);
 		setStateModal(true);
+
+		setTimeout(() => {
+			const input = document.querySelector('.input.update-todo');
+			input.focus();
+		}, 300);
 	};
 
 	const handleRemove = (id) => setTodo(todo.filter((item) => item.id !== id));
